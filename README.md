@@ -9,6 +9,7 @@ La Revista Electrónica de Investigación en Educación en Ciencias (REIEC) publ
 Este programa busca ayudar a los estudiantes a repasar temas de física que quieran o necesiten reforzar, a través de preguntas divididas que serán presentadas en base al tema y nivel de dificultad que el usuario haya seleccionado, dando una explicación y solución a aquellas preguntas que respondió incorrectamente, y dando una calificación final al terminar dicho cuestionario.
 
 Referencias: 
-Zita, A. (s.f). Importancia de la física. Toda Materia. Recuperado de: https://www.todamateria.com/importancia-de-la-fisica/
-Morales, M. Claudia, A. y Olivera, A. (2015). La enseñanza y el aprendizaje de la Física y de la Química en el nivel secundario desde la opinión de estudiantes. Revista Electrónica de Investigación en Educación en Ciencias, 10 (2). 11-19. Recuperado de: https://www.redalyc.org/articulo.oa?id=273343069002
 
+Zita, A. (s.f). Importancia de la física.  *Toda Materia*. Recuperado de: https://www.todamateria.com/importancia-de-la-fisica/
+
+Morales, M. Claudia, A. y Olivera, A. (2015). La enseñanza y el aprendizaje de la Física y de la Química en el nivel secundario desde la opinión de estudiantes.  *Revista Electrónica de Investigación en Educación en Ciencias, 10 (2)*. 11-19. Recuperado de: https://www.redalyc.org/articulo.oa?id=273343069002
