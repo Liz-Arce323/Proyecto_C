@@ -1,4 +1,4 @@
-[Algoritmo_Cuestionario de Física_A01704959.pdf](https://github.com/Liz-Arce323/Proyecto_C/files/7024761/Algoritmo_Cuestionario.de.Fisica_A01704959.pdf)
+
 #  Cuestionario de Física 
 
 La física es una ciencia exacta fundamental, que estudia la materia, la energía, el espacio y el tiempo, es decir es una ciencia que se enfoca en estudiar cómo funciona el universo, por lo mismo esta está aplicada en nuestro día a día en cosas como el transporte, la electricidad, la medicina, la tecnología, entre otras cosas.
