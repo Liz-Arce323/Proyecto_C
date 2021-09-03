@@ -7,7 +7,7 @@ Esta misma es instruida desde la escuela secundaria, sin embargo, los conceptos,
 
 La Revista Electrónica de Investigación en Educación en Ciencias (REIEC) publicó en 2015 los resultados de un estudio que fue realizado a docentes y alumnos de física y química, respecto a la enseñanza y aprendizaje de estas en el nivel secundario, el estudio se realizó a jóvenes de entre 13 a 15 años, y los resultados demostraron que si bien los estudiante consideraba que aprender física era algo interesante, útil e importante algunos alumnos consideraban que el aprendizaje era difícil y abstracto.
 
-Este programa busca ayudar a los estudiantes a repasar temas de física que quieran o necesiten reforzar, a través de preguntas divididas que serán presentadas en base al tema y nivel de dificultad que el usuario haya seleccionado, dando una explicación y solución a aquellas preguntas que respondió incorrectamente, y dando una calificación final al terminar dicho cuestionario.
+Este programa busca ayudar a los estudiantes a repasar temas de física que quieran o necesiten reforzar, a través de preguntas divididas que serán presentadas en base al tema y nivel de dificultad que el usuario haya seleccionado, marcando si la respuesta dada por el usuario es correcta o incorrecta, y dando una calificación final al terminar dicho cuestionario.
 
 
 
