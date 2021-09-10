@@ -1,18 +1,54 @@
 ######## Constantes ########
 
-gravedad = 9.81
+Gravedad = 9.81
 
 
 ########### Calificación ##############
 
-"""def calificacion ():"""
+def calificacion (respuesta_t1n1_1, respuesta_t1n1_2, respuesta_t1n1_3):
+
+    cont = 0
+
+    if respuesta_t1n1_1 == "a":
+
+        cont= cont+1
+
+        print ("Correcto")
+    else:
+
+        print ("Incorrecto")
     
-# parametros por definir
+    if respuesta_t1n1_2 == notacion_cientifica(3890000):
+
+        cont= cont+1
+        
+        print ("Correcto")
+    else:
+
+        print ("Incorrecto")
+
+    if respuesta_t1n1_3 == notacion_decimal ("01.7E+05"):
+
+        cont= cont +1
+
+        print ("Correcto")
+    else:
+
+        print ("Incorrecto")
+
+    calif = (cont*100/3)
+
+    print ("Tu calificación final es:", calif)
+    
 
 """ Se hará uso de condicionales donde se compraran las respuestas del usuario
 con los resultados obtenidos en python, determinando si el resultado es
 correcto o incorrecto (le mostrará esto al usuario, y se le sumará ciertos puntos
 a la calificación final"""
+
+#Solo un ejemplo de como serán usadas las condicionales, agregar el uso de listas para guardar las respuestas dadas por el usuario
+#Modificar cuando se encuentre una manera de hacerlo más corto y eficiente 
+
 
 
 ########### Tema 1_Operaciones ###################
@@ -58,7 +94,7 @@ favor de expresar el valor como en el siguente ejemplo:
 
 """)
 
-    notacion_cientifica(3890000)
+    (notacion_cientifica(3890000))
 
 
     respuesta_t1n1_3 = float(input("""
@@ -69,7 +105,9 @@ Para el número en notación científica a notación decimal:
 
 """))
 
-    notacion_decimal ("0.17E+05")
+    (notacion_decimal ("1.7E+05"))
+
+    calificacion (respuesta_t1n1_1, respuesta_t1n1_2, respuesta_t1n1_3)
     
 
 def tema1_dificultad2(tema_e, dificultad_e):
@@ -211,10 +249,10 @@ def tema2_dificultad3(tema_e, dificultad_e):
 """ Altura """
 
 def altura_cl_t (tiempo_cl):
-    return ("{:.2f}".format((1/2)*gravedad*tiempo_cl**2))
+    return ("{:.2f}".format((1/2)*Gravedad*tiempo_cl**2))
 
 def altura_cl_vit (velocidad_i_cl, tiempo_cl):
-    return ("{:.2f}".format((velocidad_i_cl*tiempo_cl)+(1/2)*gravedad* tiempo_cl**2))
+    return ("{:.2f}".format((velocidad_i_cl*tiempo_cl)+(1/2)*Gravedad* tiempo_cl**2))
 
 def altura_cl_vivft (velocidad_i_cl, velocidad_f_cl, tiempo_cl):
     return ("{:.2f}".format(((velocidad_i_cl + velocidad_f_cl)/2)*tiempo_cl))
@@ -223,10 +261,10 @@ def altura_cl_vivft (velocidad_i_cl, velocidad_f_cl, tiempo_cl):
 """ Tiempo """
 
 def tiempo_cl_a (altura_cl):
-    return ("{:.2f}".format(((2*altura_cl)/gravedad)**(1/2)))
+    return ("{:.2f}".format(((2*altura_cl)/Gravedad)**(1/2)))
 
 def tiempo_cl_vivf (velocidad_i_cl, velocidad_f_cl):
-    return ("{:.2f}".format((velocidad_f_cl-velocidad_i_cl)/gravedad))
+    return ("{:.2f}".format((velocidad_f_cl-velocidad_i_cl)/Gravedad))
 
 def tiempo_cl_vivfa (velocidad_i_cl, velocidad_f_cl, altura_cl):
     return ("{:.2f}".format(altura_cl/((velocidad_i_cl+velocidad_f_cl)/2)))
@@ -235,13 +273,13 @@ def tiempo_cl_vivfa (velocidad_i_cl, velocidad_f_cl, altura_cl):
 """ Velocidad Inicial """
 
 def velocidad_i_cl_vft (velocidad_f_cl, tiempo_cl):
-    return ("{:.2f}".format(velocidad_f_cl-gravedad*tiempo_cl))
+    return ("{:.2f}".format(velocidad_f_cl-Gravedad*tiempo_cl))
 
 def velocidad_i_cl_vfa (velocidad_f_cl, altura_cl):
-    return ("{:.2f}".format((velocidad_f_cl**2-2*gravedad*altura_cl)**(1/2)))
+    return ("{:.2f}".format((velocidad_f_cl**2-2*Gravedad*altura_cl)**(1/2)))
 
 def velocidad_i_cl_at (altura_cl, tiempo_cl):
-    return ("{:.2f}".format((altura_cl-(1/2)*gravedad*(tiempo_cl**2))/tiempo_cl))
+    return ("{:.2f}".format((altura_cl-(1/2)*Gravedad*(tiempo_cl**2))/tiempo_cl))
 
 def velocidad_i_cl_vfat (velocidad_f_cl, altura_cl, tiempo_cl):
     return ("{:.2f}".format(((2*altura_cl)/tiempo_cl)-velocidad_f_cl))
@@ -250,10 +288,10 @@ def velocidad_i_cl_vfat (velocidad_f_cl, altura_cl, tiempo_cl):
 """ Velocidad Final """
 
 def velocidad_f_cl_vit (velocidad_i_cl, tiempo_cl):
-    return ("{:.2f}".format(velocidad_i_cl+gravedad*tiempo_cl))
+    return ("{:.2f}".format(velocidad_i_cl+Gravedad*tiempo_cl))
 
 def velocidad_f_cl_via (velocidad_i_cl, altura_cl):
-    return ("{:.2f}".format((velocidad_i_cl**2+2*gravedad*altura_cl)**(1/2)))
+    return ("{:.2f}".format((velocidad_i_cl**2+2*Gravedad*altura_cl)**(1/2)))
 
 def velocidad_f_cl_viat (velocidad_i_cl, altura_cl, tiempo_cl):
     return ("{:.2f}".format(((2*altura_cl)/tiempo_cl)-velocidad_i_cl))
@@ -290,7 +328,7 @@ Calcula la altura de un objeto que cae en un tiempo de 67 segundos
 
 """))
 
-    print (altura_cl_t (67.0))
+    (altura_cl_t (67.0))
 
 
 
@@ -304,7 +342,7 @@ y que tiene una velocidad inicial de 13 m/s?
 
 """))
 
-    print (velocidad_f_cl_viat(13.0, 450.0, 20.0))
+    (velocidad_f_cl_viat(13.0, 450.0, 20.0))
 
 
 
@@ -322,10 +360,10 @@ def tema3_dificultad3(tema_e, dificultad_e):
 #Masa y Peso
 
 def masa_mp (peso):
-    return ("{:.2f}".format(peso/gravedad))
+    return ("{:.2f}".format(peso/Gravedad))
 
 def peso_mp (masa):
-    return ("{:.2f}".format(masa*gravedad))
+    return ("{:.2f}".format(masa*Gravedad))
 
    
 ########### Tema 4_Preguntas #####################
@@ -424,7 +462,7 @@ c) 3ra Ley de Newton
 
 """))
 
-    print (fuerza_neta (40.0,3.5))
+    (fuerza_neta (40.0,3.5))
 
 
     respuesta_t5n1_3 = input("""
@@ -467,7 +505,7 @@ tema = int(input("""
 """))
 
 
-if tema < 1 or tema > 5:
+if tema < 1 or tema > 5:    #Esta función ya estaba presente en las entregas pasadas, pero es utilizada para cumplir el avance de if's para esta entrega
 
     tema = int(input("""
 Lo siento el número seleccionado no está en los parámetros,
@@ -491,7 +529,7 @@ dificultad = int(input("""
 
 """))
 
-if dificultad < 0 or dificultad > 3:
+if dificultad < 0 or dificultad > 3:    #Esta función ya estaba presente en las entregas pasadas, pero es utilizada para cumplir el avance de if's para esta entrega
 
     dificultad = int(input("""
 Lo siento el número seleccionado no está en los parámetros,
@@ -504,7 +542,8 @@ por favor ingrese un número que este dentro de los parámetros:
 
 
 
-
+#Estas funciones ya estaban presentes en las entregas pasadas, pero es utilizada para cumplir el avance de if's para esta entrega
+    
 if tema == 1 and dificultad == 1:
     tema1_dificultad1("Notación Cinetífica", "1")
 
@@ -516,7 +555,7 @@ elif tema == 1 and dificultad == 3:
 
 
 
-if tema == 2 and dificultad == 1:
+elif tema == 2 and dificultad == 1:
     tema2_dificultad1("MRU y MRUA", "1")
 
 elif tema == 2 and dificultad == 2:
@@ -528,7 +567,7 @@ elif tema == 2 and dificultad == 3:
 
 
 
-if tema == 3 and dificultad == 1:
+elif tema == 3 and dificultad == 1:
     tema3_dificultad1("Caída Libre", "1")
 
 elif tema == 3 and dificultad == 2:
@@ -540,7 +579,7 @@ elif tema == 3 and dificultad == 3:
 
 
 
-if tema == 4 and dificultad == 1:
+elif tema == 4 and dificultad == 1:
     tema4_dificultad1("Masa y Peso", "1")
 
 elif tema == 4 and dificultad == 2:
@@ -552,7 +591,7 @@ elif tema == 4 and dificultad == 3:
 
 
 
-if tema == 5 and dificultad == 1:
+elif tema == 5 and dificultad == 1:
     tema5_dificultad1("Leyes de Newton", "1")
 
 elif tema == 5 and dificultad == 2:
