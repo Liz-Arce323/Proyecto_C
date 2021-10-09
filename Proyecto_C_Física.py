@@ -1,11 +1,13 @@
 #Nota a considerar
 
-"""Solo el tema 1 (COMPLETO) y el tema 2 nivel 1
-han sido programados hasta el momento para utilizar
+"""Este programa no requiere el uso de matrices"""
+
+"""Solo el tema 1 y 2 (COMPLETO) y el nivel 1 del resto de
+los temas han sido programados hasta el momento para utilizar
 listas y funcionar con las funciones calificacion,
 correcto_o_incorrecto y limpiar lista.
 
-El resto de funciones aún necesitan y están en proceso de
+Falta hacer correcciones. El resto de funciones aún necesitan y están en proceso de
 ser programadas
 """
 
@@ -69,6 +71,18 @@ Correcto""")
 Incorrecto""")
 
         return contar
+
+
+
+"""Conversion_de_unidades"""
+
+def kh_a_ms (kilometros_hora):
+    metros_seg = (kilometros_hora*1000/3600)
+    return ("{:.2f}".format(metros_seg))
+
+def min_a_hrs (minutos):
+    horas_c = minutos/60
+    return horas_c
 
 
 """ Tema 1_Operaciones_Notación científica"""
@@ -252,7 +266,7 @@ a.bE±(exponente)
 
 Calcula el valor de la siguiente operación y presente su respuesta
 
-en notación decimal:
+en notación decimal (todos los decimales):
 
 
 1.7E-05 * 0.134 / 0.001
@@ -339,8 +353,9 @@ def distancia_mrua_vfvit (velocidad_f_mrua, velocidad_i_mrua, tiempo_mrua):
     return ("{:.2f}".format(distancia_mrua_f2))
 
 def distancia_mrua_vfvia (velocidad_f_mrua, velocidad_i_mrua,aceleracion_mrua):
-    distancia_mrua_f3 = (velocidad_f_mrua**2-velocidad_i_mrua**2) / (2*aceleracion_mrua)
-    return ("{:.2f}".format(distancia_mrua_f3))
+    distancia_mrua_f3_p1 = (velocidad_f_mrua**2-velocidad_i_mrua**2)
+    distancia_mrua_f3_p2 = distancia_mrua_f3_p1 / (2*aceleracion_mrua)
+    return ("{:.2f}".format(distancia_mrua_f3_p2))
 
 
 """Velocidad Inicial"""
@@ -367,11 +382,11 @@ def velocidad_f_mrua_viad (velocidad_i_mrua, aceleracion_mrua, distancia_mrua):
 
 """Aceleración"""
 
-def aceleracion_mrua_v0vft (velocidad_f_mrua, velocidad_i_mrua, tiempo_mrua):
+def aceleracion_mrua_vfvit (velocidad_f_mrua, velocidad_i_mrua, tiempo_mrua):
     aceleracion_mrua_f1 = (velocidad_f_mrua-velocidad_i_mrua)/tiempo_mrua
     return ("{:.2f}".format(aceleracion_mrua_f1))
 
-def aceleracion_mrua_v0vfd (velocidad_f_mrua, velocidad_i_mrua, distancia_mrua):
+def aceleracion_mrua_vfvid (velocidad_f_mrua, velocidad_i_mrua, distancia_mrua):
     aceleracion_mrua_f2 = (velocidad_f_mrua**2-velocidad_i_mrua**2)/(2*distancia_mrua)
     return ("{:.2f}".format(aceleracion_mrua_f2))
 
@@ -383,9 +398,36 @@ def aceleracion_mrua_v0vfd (velocidad_f_mrua, velocidad_i_mrua, distancia_mrua):
 def tema2_dificultad1(tema_e, dificultad_e):
 
     print ("\nTema 2: " + tema_e + "\n\nNivel " + dificultad_e)
-    
+
 
     respuesta_t2n1_1 = input("""
+
+¿Qué significa movimiento uniforme?
+
+a) Cuando un objeto viaja a lo largo de una trayectoria,
+   con aceleración nula y una velocidad constante
+   
+b) Desplazamientos iguales que ocurren en intervalos sucesivos
+   de tiempos iguales
+   
+c) Cuando un objeto viaja a lo largo de una trayectoria, con
+   aceleración constante y una magnitud de velocidad variable
+
+
+
+""")
+
+
+    respuestas_usuario.append (respuesta_t2n1_1)
+
+    respuesta_t2n1_1_p = "b"
+    respuestas_programa.append(respuesta_t2n1_1_p)
+
+    cont_1 = correcto_o_incorrecto (0)
+
+    
+
+    respuesta_t2n1_2 = input("""
 
 ¿Cuál es la fórmula para calcular la velocidad en MRU?
 
@@ -397,18 +439,18 @@ c) v = d+t
 
 """)
 
-    respuestas_usuario.append(respuesta_t2n1_1)
+    respuestas_usuario.append(respuesta_t2n1_2)
     
-    respuesta_t2n1_1_p = "a"
-    respuestas_programa.append(respuesta_t2n1_1_p)
+    respuesta_t2n1_2_p = "a"
+    respuestas_programa.append(respuesta_t2n1_2_p)
 
-    cont_1 = correcto_o_incorrecto (0)
+    cont_2 = correcto_o_incorrecto (1)
 
     
 
-    respuesta_t2n1_2 = float(input("""
+    respuesta_t2n1_3 = float(input("""
 
-Calcula la velocidad de un auto que se mueve a 450 m en 120 segundos
+Calcula la velocidad de un auto que se mueve a 1450 m en 60 segundos
 
 (solo ingrese el número con dos decimales)
 
@@ -416,19 +458,72 @@ Calcula la velocidad de un auto que se mueve a 450 m en 120 segundos
 
 
 
-    respuestas_usuario.append(str (respuesta_t2n1_2))
+    respuestas_usuario.append(str (respuesta_t2n1_3))
     
-    respuesta_t2n1_2_p = velocidad_mru(450.0, 120.0)
-    respuestas_programa.append(respuesta_t2n1_2_p)
+    respuesta_t2n1_3_p = velocidad_mru(1450.0, 60.0)
+    respuestas_programa.append(respuesta_t2n1_3_p)
+
+    cont_3 = correcto_o_incorrecto (2)
+
+
+    cont_f = cont_1 + cont_2 + cont_3
+
+    calificacion (cont_f)
+    
+
+def tema2_dificultad2(tema_e, dificultad_e):
+    print ("\nTema 2: " + tema_e + "\n\nNivel " + dificultad_e)
+
+    respuesta_t2n2_1 = input("""
+
+¿Qué es necesario para que el movimiento de un objeto sea considerado
+Movimiento Rectilíneo Uniforme (MRU)?
+
+a) Que la aceleración pueda ser negativa o positiva
+
+b) Que la aceleración del objeto se constante
+
+c) Que la aceleración del objeto sea 0 m/s²
+
+
+""")
+
+    respuestas_usuario.append(respuesta_t2n2_1)
+
+    respuesta_t2n2_1_p = "c"
+    respuestas_programa.append(respuesta_t2n2_1_p)
+
+    cont_1 = correcto_o_incorrecto (0)
+
+
+
+
+    respuesta_t2n2_2 = float(input("""
+
+¿Cuál es la aceleración de un objeto que de tener una velocidad de 0 m/s
+pasó a tener una velocidad de 55 m/s en 89 segundos?
+
+(solo ingrese el número con dos decimales)
+
+
+"""))
+
+
+    respuestas_usuario.append(str(respuesta_t2n2_2))
+
+    respuesta_t2n2_2_p = aceleracion_mrua_vfvit (55.0, 0.0, 89.0)
+    respuestas_programa.append(respuesta_t2n2_2_p)
 
     cont_2 = correcto_o_incorrecto (1)
 
 
 
-    respuesta_t2n1_3 = float(input("""
 
-¿Cuál es la aceleración de un objeto que de tener una velocidad de 0 m/s
-pasó a tener una velocidad de 45 m/s en 89 segundos?
+    respuesta_t2n2_3 = float(input("""
+
+Calcula la distancia que recorre un objeto que inicias con una velocidad
+de 3 km/h, termina con una velocidad de 45 m/s y tiene una aceleración de
+4 m/s²
 
 (solo ingrese el número con dos decimales)
 
@@ -436,28 +531,100 @@ pasó a tener una velocidad de 45 m/s en 89 segundos?
 """))
 
 
-    respuestas_usuario.append(str (respuesta_t2n1_3))
+    respuestas_usuario.append(str (respuesta_t2n2_3))
 
-    respuesta_t2n1_3_p = aceleracion_mrua_v0vft (45.0, 0.0, 89.0)
-    respuestas_programa.append(respuesta_t2n1_3_p)
+    conversion_1 = float (kh_a_ms (3))
+
+    respuesta_t2n2_3_p = distancia_mrua_vfvia (45.0, conversion_1, 4.0)
+    respuestas_programa.append(respuesta_t2n2_3_p)
 
     cont_3 = correcto_o_incorrecto (2)
+
+
 
     cont_f = cont_1 + cont_2 + cont_3
 
     calificacion (cont_f)
     
     
-
-def tema2_dificultad2(tema_e, dificultad_e):
-    print ("\nTema 2: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma tematica de nivel uno, pero más difícil")
     
 def tema2_dificultad3(tema_e, dificultad_e):
     print ("\nTema 2: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma tematica de nivel uno, pero más difícil que uno y dos")
 
 
+    respuesta_t2n3_1 = float(input( """
+
+Un ciclista que está en reposo comienza a pedalear hasta alcanzar los
+16.6 km/h en 6 minutos. Calcular la distancia total que recorre si continúa
+acelerando durante 18 minutos más. Presenta tu respuesta en Kilómetros.
+
+(solo ingrese el número con dos decimales)
+
+"""))
+
+    respuestas_usuario.append(str(respuesta_t2n3_1))
+
+    conversion_2 = min_a_hrs (6)
+    conversion_3 = min_a_hrs (18)
+    
+    aceleracion_t2n3_1 = float(aceleracion_mrua_vfvit (16.6, 0.0, conversion_2))
+    
+    respuesta_t2n3_1_p = distancia_mrua_vita (16.6, conversion_3, aceleracion_t2n3_1)
+    respuestas_programa.append(respuesta_t2n3_1_p)
+
+    cont_1 = correcto_o_incorrecto (0)
+                                    
+
+
+    respuesta_t2n3_2 = float(input( """
+
+Un cohete que despega de su base de lanzamiento alcanza una velocidad vertical
+de 140 m/s en 9s. Calcula la velocidad alcanzada después de 3s.
+
+(solo ingrese el número con dos decimales)
+
+"""))
+
+    respuestas_usuario.append(str(respuesta_t2n3_2))
+
+    aceleracion_t2n3_2 = float(aceleracion_mrua_vfvit (140.0, 0.0, 9.0))                               
+
+    respuesta_t2n3_2_p = velocidad_f_mrua_viat (0.0, aceleracion_t2n3_2, 3)
+    respuestas_programa.append(respuesta_t2n3_2_p)
+
+    cont_2 = correcto_o_incorrecto (1)
+
+
+
+    respuesta_t2n3_3 = float(input( """
+
+Una grúa es utilizada para levantar una viga de acero de sección I hasta lo alto
+de un edificio de 100 ft. Durante los primeros 2 s, la viga es levantada del reposo
+con una aceleración hacia arriba de 8 ft/s2. Si la velocidad permanece constante
+durante el resto del trayecto, ¿cuánto tiempo se requiere en total para levantar la
+viga desde el suelo hasta el techo?
+
+(solo ingrese el número con dos decimales)
+
+"""))
+
+    respuestas_usuario.append(respuesta_t2n3_3)
+
+    velocidad_f_t2n3_1 = float(velocidad_f_mrua_viat (0.0, 8, 2))
+    distancia_t2n3_1 = float(distancia_mrua_vfvit (velocidad_f_t2n3_1, 0.0, 2))
+    distancia_final_t2n3_1 = float((100-distancia_t2n3_1))
+    
+    tiempo_total_t2n3_1 = (float(tiempo_mru(distancia_final_t2n3_1, velocidad_f_t2n3_1)))+2
+    
+    respuesta_t2n3_3_p = tiempo_total_t2n3_1
+    respuestas_programa.append(respuesta_t2n3_3_p)
+
+    cont_3 = correcto_o_incorrecto (2)
+
+
+    cont_f = cont_1 + cont_2 + cont_3
+
+    calificacion (cont_f)
     
 
 
@@ -546,6 +713,14 @@ b) Cualquier objeto bajo la acción de la gravedad en un lugar donde
 c) Un objeto en caída libre
 
 """)
+
+    respuestas_usuario.append(respuesta_t3n1_1)
+
+    respuesta_t3n1_1_p = "b"
+    respuestas_programa.append(respuesta_t3n1_1_p)
+
+    cont_1 = correcto_o_incorrecto (0)
+
     
 
     respuesta_t3n1_2 = float(input("""
@@ -557,7 +732,14 @@ Calcula la altura de un objeto que cae en un tiempo de 67 segundos
 
 """))
 
-    (altura_cl_t (67.0))
+    
+
+    respuestas_usuario.append(str(respuesta_t3n1_2))
+
+    respuesta_t3n1_2_p = altura_cl_t (67.0)
+    respuestas_programa.append(respuesta_t3n1_2_p)
+
+    cont_2 = correcto_o_incorrecto (1)
 
 
 
@@ -571,17 +753,29 @@ segundos y que tiene una velocidad inicial de 13 m/s?
 
 """))
 
-    (velocidad_f_cl_viat(13.0, 450.0, 20.0))
 
+    respuestas_usuario.append(str(respuesta_t3n1_3))
+
+    respuesta_t3n1_3_p = velocidad_f_cl_viat(13.0, 450.0, 20.0)
+    respuestas_programa.append(respuesta_t3n1_3_p)
+
+    cont_3 = correcto_o_incorrecto (2)
+
+
+    cont_f = cont_1 + cont_2 + cont_3
+
+    calificacion (cont_f)
+    
+    
 
 
 def tema3_dificultad2(tema_e, dificultad_e):
     print ("\nTema 3: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma temática de nivel uno, pero más difícil")
+
+    
     
 def tema3_dificultad3(tema_e, dificultad_e):
     print ("\nTema 3: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma temática de nivel uno, pero más difícil que uno y dos")
     
 
 
@@ -605,6 +799,7 @@ def tema4_dificultad1(tema_e, dificultad_e):
 
     print ("\nTema 4: " + tema_e + "\n\nNivel " + dificultad_e)
 
+
     respuesta_t4n1_1 = input("""
 
 La unidad de medida de la masa en el SI es:
@@ -618,6 +813,15 @@ c) Kilogramos
 """)
     
 
+    respuestas_usuario.append(respuesta_t4n1_1)
+
+    respuesta_t4n1_1_p = "c"
+    respuestas_programa.append(respuesta_t4n1_1_p)
+
+    cont_1 = correcto_o_incorrecto (0)
+    
+
+
     respuesta_t4n1_2 = float(input("""
 
 Calcula la masa de un automóvil que pesa 17500 N
@@ -626,7 +830,14 @@ Calcula la masa de un automóvil que pesa 17500 N
 
 """))
 
-    masa_mp (17500.0)
+
+    respuestas_usuario.append(str(respuesta_t4n1_2))
+
+    respuesta_t4n1_2_p = masa_mp (17500.0)
+    respuestas_programa.append(respuesta_t4n1_2_p)
+
+    cont_2 = correcto_o_incorrecto (1)
+    
 
 
 
@@ -641,16 +852,28 @@ Calcula la masa de un automóvil que pesa 17500 N
 
     peso_mp (75.0)
     
+    respuestas_usuario.append(str(respuesta_t4n1_3))
+
+    respuesta_t4n1_3_p = peso_mp (75.0)
+    respuestas_programa.append(respuesta_t4n1_3_p)
+
+    cont_3 = correcto_o_incorrecto (2)
+    
+    cont_f = cont_1 + cont_2 + cont_3
+
+    calificacion (cont_f)
+
+                                        
 
 def tema4_dificultad2(tema_e, dificultad_e):
     print ("\nTema 4: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma temática de nivel uno, pero más difícil")
+
+    
     
 def tema4_dificultad3(tema_e, dificultad_e):
     print ("\nTema 4: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma temática de nivel uno, pero más difícil que uno y dos")
-
     
+
     
 
 """Tema 5_Operaciones_Leyes de Newton"""
@@ -674,6 +897,7 @@ def tema5_dificultad1(tema_e, dificultad_e):
     
     print ("\nTema 5: " + tema_e + "\n\nNivel " + dificultad_e)
 
+
     respuesta_t5n1_1 = input("""
 
 "A toda acción corresponde una reacción de igual magnitud,
@@ -688,7 +912,16 @@ b) 2da Ley de Newton
 c) 3ra Ley de Newton
 
 """)
-    
+
+
+    respuestas_usuario.append(str (respuesta_t5n1_1))
+
+    respuesta_t5n1_1_p = "c"
+    respuestas_programa.append(respuesta_t5n1_1_p)
+
+    cont_1 = correcto_o_incorrecto (0)
+
+                                    
 
     respuesta_t5n1_2 = float(input("""
 
@@ -700,8 +933,17 @@ aceleración = 3.5 m/s^2?
 
 """))
 
-    (fuerza_neta (40.0,3.5))
+    
+                                    
+    respuestas_usuario.append(str(respuesta_t5n1_2))
 
+    respuesta_t5n1_2_p = fuerza_neta (40.0,3.5)
+    respuestas_programa.append(respuesta_t5n1_2_p)
+
+    cont_2 = correcto_o_incorrecto (1)
+
+
+                                    
 
     respuesta_t5n1_3 = input("""
 
@@ -714,18 +956,31 @@ b) Ley de la Inercia
 c) Ley de los objetos estáticos
 
 """)
-    
 
+    respuestas_usuario.append(respuesta_t5n1_3)
+
+    respuesta_t5n1_3_p = "b"
+    respuestas_programa.append(respuesta_t5n1_3_p)
+
+    cont_3 = correcto_o_incorrecto (2)
+    
+    cont_f = cont_1 + cont_2 + cont_3
+
+    calificacion (cont_f)
+
+                                    
 def tema5_dificultad2(tema_e, dificultad_e):
     print ("\nTema 5: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma temática de nivel uno, pero más difícil")
+
+
+
     
 def tema5_dificultad3(tema_e, dificultad_e):
     print ("\nTema 5: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("La misma temática de nivel uno, pero más difícil que uno y dos")
 
 
-    
+
+     
     
 
 """Elegir  tema y nivel"""
@@ -856,9 +1111,9 @@ continuar_p = input("""
 
 ¿Deseas repasar otro tema?
 
-a)Sí
+a) Sí
 
-b)No
+b) No
 
 """)
 
@@ -870,17 +1125,11 @@ while continuar_p == "a" or continuar_p == "A":
 
 ¿Deseas repasar otro tema?
 
-a)Sí
+a) Sí
 
-b)No
+b) No
 
 """)
 
 
 print ("¡Gracias por repasar en este programa!")
-
-#print agregado solo para demostrar que las listas han vuelto a estar vacias en espera de nuevas respuestas
-    
-print (respuestas_usuario)
-print (respuestas_programa)
-
