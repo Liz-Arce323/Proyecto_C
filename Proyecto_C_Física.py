@@ -1,20 +1,11 @@
-#Nota a considerar
+""" Nota para la Sub-competencia: Tecnologías SEG0702A
 
-"""Este programa no requiere el uso de matrices"""
+'Incorpora y explica nuevas fucniones en su programa e inclya sus referencias
+al API de python'
 
-"""Solo el tema 1 y 2 (COMPLETO) y el nivel 1 del resto de
-los temas han sido programados hasta el momento para utilizar
-listas y funcionar con las funciones calificacion,
-correcto_o_incorrecto y limpiar lista.
+Se encuentran en las líneas: 3 referencias 
 
-Falta hacer correcciones. El resto de funciones aún necesitan y están en proceso de
-ser programadas
-"""
-
-#Agregar dato de las funciones invetigdas y la llínea en la que se encuentra
-#Para referencias del cuetionario poner un libro de física que hable de estos temas
-
-
+con el link de referencia en las lineas:  """
 
 
 
@@ -29,11 +20,9 @@ respuestas_usuario =[]
 respuestas_programa = []
 
 
-"""Limpiar listas"""
-
 def limpiar_lista (respuestas_usuario, respuestas_programa, tam):
 
-    """Recibe: Las lista de nombre respuestas_usuario y respuestas_programa
+    """Recibe: Las listas de nombre respuestas_usuario y respuestas_programa
     Fucnión: Esta función se encarga de borrar de los elementos 0 a el número
     de elementos - 1 de las listas nombradas.
     Retorna: Listas respuestas_usuario y respuestas_programa vacias"""
@@ -46,27 +35,22 @@ def limpiar_lista (respuestas_usuario, respuestas_programa, tam):
 
 def calificacion (cont_f):
 
-    calif = (cont_f*100/3)
+    tam = len(respuestas_programa)
+
+    calif = (cont_f*100/tam)
 
     print ("\nTu calificación final es:", ("{:.2f}".format(calif)), "\n")
-
-#print agregado solo para comparar respuestas y demostrar el uso de listas,esto no aparecerá en la entrega final
-    
-    print (respuestas_usuario)
-    print (respuestas_programa)
-
-    tam = len(respuestas_programa)
 
     limpiar_lista (respuestas_usuario, respuestas_programa, tam)
     
 
 """ Correcto o Incorrecto """
 
-def correcto_o_incorrecto (respuestas_usuario, respuestas_programa, numero_indice):
+def correcto_o_incorrecto (respuestas_usuario, respuestas_programa, n_indice):
 
     contar = 0
 
-    if (respuestas_usuario[numero_indice]) == (respuestas_programa[numero_indice]):
+    if (respuestas_usuario[n_indice]) == (respuestas_programa[n_indice]):
 
         contar = contar + 1
 
@@ -101,7 +85,8 @@ def notacion_cientifica(numero_nd):
     decimal a notación científica
     Retorna: Número recibido en notación científica"""
     
-    """Referencia: https://www.delftstack.com/es/howto/python/scientific-notation-python/"""
+    """Referencia: https://www.delftstack.com/es/howto/python/scientific-
+    notation-python/"""
     
     return format(numero_nd, ".1E")
 
@@ -112,7 +97,8 @@ def notacion_decimal(numero_nc):
     científica a notación decimal
     Retorna: Número recibido en notación decimal"""
     
-    """Referencia: https://www.it-swarm-es.com/es/python/convertir-notacion-cientifica-decimales/1051995017/"""
+    """Referencia: https://www.it-swarm-es.com/es/python/convertir-notacion-
+    cientifica-decimales/1051995017/"""
 
     return float(numero_nc)
 
@@ -277,7 +263,6 @@ def tema1_dificultad2(tema_e, dificultad_e):
 
 """" Tema 2_Operaciones"""
 
-#MRU
 
 def velocidad_mru(distancia_mru, tiempo_mru):
     velocidad_mru_f1 = distancia_mru/tiempo_mru 
@@ -287,7 +272,6 @@ def tiempo_mru(distancia_mru, velocidad_mru):
     velocidad_mru_f3 = distancia_mru/velocidad_mru
     return  ("{:.2f}".format(velocidad_mru_f3))
 
-#MRUA
 
 
 """Distancia"""
@@ -457,10 +441,10 @@ def tema2_dificultad2(tema_e, dificultad_e):
     respuesta_t2n2_4 = float(input( """
 
     Una grúa es utilizada para levantar una viga de acero de sección I hasta lo
-    alto de un edificio de 100 ft. Durante los primeros 2 s, la viga es levantada
-    del reposo con una aceleración hacia arriba de 8 ft/s2. Si la velocidad
-    permanece constante durante el resto del trayecto, ¿cuánto tiempo se requiere
-    en total para levantar la viga desde el suelo hasta el techo?
+    alto de un edificio de 100 ft. Durante los primeros 2 s, la viga es
+    levantada del reposo con una aceleración hacia arriba de 8 ft/s2. Si la
+    velocidad permanece constante durante el resto del trayecto, ¿cuánto tiempo
+    se requiere en total para levantar la viga desde el suelo hasta el techo?
 
     """))
 
@@ -539,13 +523,12 @@ def velocidad_f_cl_viat (velocidad_i_cl, altura_cl, tiempo_cl):
 def tema3_dificultad1(tema_e, dificultad_e):
 
     print ("\nTema 3: " + tema_e + "\n\nNivel " + dificultad_e)
-
-    print ("Gravedad", GRAVEDAD)
+    print ("\nGravedad", GRAVEDAD)
     
 
     respuesta_t3n1_1 = input("""
 
-    "¿Cuál sería la mejor definición para caída libre?
+    ¿Cuál sería la mejor definición para caída libre?
 
     a) Un objeto que cae
 
@@ -608,11 +591,12 @@ def tema3_dificultad1(tema_e, dificultad_e):
 
 def tema3_dificultad2(tema_e, dificultad_e):
     print ("\nTema 3: " + tema_e + "\n\nNivel " + dificultad_e)
-    print ("Gravedad", GRAVEDAD)
+    print ("\nGravedad", GRAVEDAD)
 
     
 
     respuesta_t3n2_1 = float(input( """
+
     Una persona suelta una piedra desde una azotea de 45 m de altura.
 
     ¿Cuánto tiempo tardará en llegar al suelo?
@@ -663,7 +647,8 @@ def tema3_dificultad2(tema_e, dificultad_e):
     
     n_piso = round(h_t3n2_3/2.88)
 
-    """Referencia: https://micro.recursospython.com/recursos/como-redondear-un-numero-decimal.html"""
+    """Referencia: https://micro.recursospython.com/recursos/como-redondear-un
+    -numero-decimal.html"""
     
     respuesta_t3n2_3_p = str(n_piso)
     respuestas_programa.append(respuesta_t3n2_3_p)
@@ -698,6 +683,14 @@ def tema3_dificultad2(tema_e, dificultad_e):
     
 
 """Tema 4_Operaciones_Leyes de Newton"""
+
+def fuerza_friccion (normal, uk):
+    f_friccion = normal*uk
+    return ("{:.2f}".format(f_friccion))
+
+def peso_newton (masa_n):
+    peso_newton_f = masa_n*GRAVEDAD
+    return ("{:.2f}".format(peso_newton_f))
 
 def fuerza_neta (masa_n, aceleracion_n):
     fuerza_neta_f = masa_n *aceleracion_n
@@ -749,13 +742,11 @@ def tema4_dificultad1(tema_e, dificultad_e):
     ¿Cuál es la Fuerza Neta de un objeto con una masa de 40 Kg y una
     aceleración = 3.5 m/s^2?
 
-    (solo ingrese el número con dos decimales)
-
     """))
 
     
                                     
-    respuestas_usuario.append(str(respuesta_t4n1_2))
+    respuestas_usuario.append("{:.2f}".format(respuesta_t4n1_2))
 
     respuesta_t4n1_2_p = fuerza_neta (40.0,3.5)
     respuestas_programa.append(respuesta_t4n1_2_p)
@@ -792,45 +783,91 @@ def tema4_dificultad1(tema_e, dificultad_e):
 def tema4_dificultad2(tema_e, dificultad_e):
     print ("\nTema 4: " + tema_e + "\n\nNivel " + dificultad_e)
     
-"""
-    respuesta_t4n2_1 = input( """ """)
+
+    respuesta_t4n2_1 = input( """
+
+    Un bloque es arrastrado a lo largo de una mesa, considerando que la fricción
+    ejercida entre la mesa y el bloque es despreciable ¿Cuántas y cuáles fuerzas
+    son las que están actuando sobre el bloque?
+
+    a) 3 → Peso (W), Normal (N) y la Fuerza Neta (F)
+
+    b) 4 → Peso (W), Normal (N), Fuerza de Fricción (Fĸ) y la Fuerza Neta (F)
+
+    c) 2 → Peso (W) y Normal (N) 
+
+    """)
 
     respuestas_usuario.append(str(respuesta_t4n2_1))
 
-    respuesta_t4n2_1_p = #
+    respuesta_t4n2_1_p = "a"
     respuestas_programa.append(respuesta_t4n2_1_p)
 
-    cont_3 = correcto_o_incorrecto (respuestas_usuario, respuestas_programa, 0)
+    cont_1 = correcto_o_incorrecto (respuestas_usuario, respuestas_programa, 0)
                                     
 
 
-    respuesta_t4n2_2 = input( """ """)
+    respuesta_t4n2_2 = input( """
+
+    Un hombre adulto y un niño pequeño están parados uno frente al otro sobre
+    hielo sin fricción. Juntan sus manos y el hombre empuja al niño de modo
+    que se separan ¿Quién se aleja con mayor rapidez?
+
+    a) El hombre
+
+    b) El niño
+
+    c) Ambos se alejan a la misma rapidez
+
+    """)
 
     respuestas_usuario.append(str(respuesta_t4n2_2))
 
-    respuesta_t4n2_2_p = #
+    respuesta_t4n2_2_p = "b"
     respuestas_programa.append(respuesta_t4n2_2_p)
 
-    cont_3 = correcto_o_incorrecto (respuestas_usuario, respuestas_programa, 1)
+    cont_2 = correcto_o_incorrecto (respuestas_usuario, respuestas_programa, 1)
 
 
 
-    respuesta_t4n2_3 = input( """ """)
+    respuesta_t4n2_3 = float(input( """
+
+    Una fuerza horizontal de 100N arrastra un bloque de 8kg horizontalmente
+    a lo largo del suelo. Si el coeficiente de fricción cinética entre el
+    bloque y el suelo es de 0.2, encuéntrese la aceleración del bloque. 
+
+    """))
 
     respuestas_usuario.append(str(respuesta_t4n2_3))
 
-    respuesta_t4n2_3_p = #
+    peso_t4n2_3 = float(peso_newton (8.0))
+    fk_t4n2_3 = float(fuerza_friccion(peso_t4n2_3, 0.2))
+    suma_F_t4n2_3 = 100-fk_t4n2_3
+
+    respuesta_t4n2_3_p = aceleracion_2n (suma_F_t4n2_3, 8.0)
     respuestas_programa.append(respuesta_t4n2_3_p)
 
     cont_3 = correcto_o_incorrecto (respuestas_usuario, respuestas_programa, 2)
 
 
 
-    respuesta_t4n2_4 = input( """ """)
+    respuesta_t4n2_4 = float(input("""
 
-    respuestas_usuario.append(str (respuesta_t4n2_4))
+    Un ascensor de 2000 lb es subido con una aceleración de 8 ft/s2.
+    Encuéntrese la resistencia mínima a la ruptura que debe tener el cable
+    que lo soporta.
 
-    respuesta_t4n2_4_p = #
+    El valor de la gravedad es: 32 ft/s²
+    
+    """))
+
+    respuestas_usuario.append(respuesta_t4n2_4)
+
+    masa_t4n2_4 = float(masa_2n (2000.0, 32.0))
+    f1 = float(fuerza_neta (masa_t4n2_4, 8.0))
+    suma_F_t4n2_4 = f1+2000
+
+    respuesta_t4n2_4_p = suma_F_t4n2_4
     respuestas_programa.append(respuesta_t4n2_4_p)
 
     cont_4 = correcto_o_incorrecto (respuestas_usuario, respuestas_programa, 3)
@@ -838,12 +875,12 @@ def tema4_dificultad2(tema_e, dificultad_e):
 
     cont_f = cont_1 + cont_2 + cont_3 + cont_4
     calificacion (cont_f)
-"""
+
 
      
     
 
-"""Elegir  tema y nivel"""
+"""Elegir tema y nivel"""
 
 def tema_y_nivel ():
 
@@ -893,10 +930,8 @@ def tema_y_nivel ():
 
     En preguntas que requieran una respuesta de valor numérico, el valor
     deberá de ingresarse siempre con dos decimales a excepción de que haya
-    una instrucción que señale lo contrario, esto también aplica para las
-    respuestas con valores enteros, en cuyo caso los decimales ingresados
-    deberán ser .00, al mismo tiempo NO deberán de ingresarse las unidades
-    de medición de estas respuestas.
+    una instrucción que señale lo contrario, al mismo tiempo NO deberán de
+    ingresarse las unidades de medición de estas respuestas.
 
     Asimismo, las respuestas deberán de estar redondeadas hacia arriba
     en caso de que tu tercer decimar sea igual o mayor a 5 o hacia abajo
@@ -931,10 +966,10 @@ def tema_y_nivel ():
 
 
     elif tema == 4 and dificultad == 1:
-        tema5_dificultad1("Leyes de Newton", "1")
+        tema4_dificultad1("Leyes de Newton", "1")
 
     elif tema == 4 and dificultad == 2:
-        tema5_dificultad2("Leyes de Newton", "2")
+        tema4_dificultad2("Leyes de Newton", "2")
 
 
 
@@ -958,20 +993,19 @@ b) No
 
 """)
 
-print (respuestas_usuario)
-print (respuestas_programa)
 
 while continuar_p == "a" or continuar_p == "A":
     
     tema_y_nivel ()
     
-    continuar_p = input("""\n¿Deseas repasar otro tema?
+    continuar_p = input("""
+    ¿Deseas repasar otro tema?
 
-a) Sí
+    a) Sí
 
-b) No
+    b) No
 
-""")
+    """)
 
 
 print ("\n¡Gracias por repasar en este programa!")
