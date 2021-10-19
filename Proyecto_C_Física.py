@@ -22,18 +22,25 @@ respuestas_programa = []
 
 def limpiar_lista (respuestas_usuario, respuestas_programa, tam):
 
-    """Recibe: Las listas de nombre respuestas_usuario y respuestas_programa
+    """Recibe: Las listas de nombre respuestas_usuario y respuestas_programa.
     Fucnión: Esta función se encarga de borrar de los elementos 0 a el número
     de elementos - 1 de las listas nombradas.
-    Retorna: Listas respuestas_usuario y respuestas_programa vacias"""
+    Retorna: Listas respuestas_usuario y respuestas_programa vacias."""
      
 
     del respuestas_usuario [0:tam]
     del respuestas_programa [0:tam]
 
-""" Calcula la calificación del usuario"""
 
 def calificacion (cont_f):
+
+    """Recibe: La cantidad de preguntas que el usuario contestó correctamente.
+    Función: Calcula la calificación del usuario usando la regla de tres, al
+    multiplicar el número de respuestas correctas por 100 y dividiéndola entre
+    el tamaño de la lista de las respuestas del programa. También manda a llamar
+    a la función limpiar_lista.
+    Retorna: El texto 'Tu calificación final es:' con la calificación del
+    usuario con dos decimales."""
 
     tam = len(respuestas_programa)
 
@@ -44,9 +51,16 @@ def calificacion (cont_f):
     limpiar_lista (respuestas_usuario, respuestas_programa, tam)
     
 
-""" Correcto o Incorrecto """
-
 def correcto_o_incorrecto (respuestas_usuario, respuestas_programa, n_indice):
+
+    """Recibe: Listas respuestas_usuario, respuestas_programa y el número
+    de índice que se va a comparar en la función.
+    Función: Compara los elementos de las listas que se encuentra en el índice
+    indicado, si estos son iguales se le sumara 1 a la variable contar, en caso
+    contrario, la variable permanece con el valor 0.
+    Retorna: Si la respuesta es correcta o incorrecta y el valor de la variable
+    contar."""
+
 
     contar = 0
 
@@ -65,25 +79,33 @@ def correcto_o_incorrecto (respuestas_usuario, respuestas_programa, n_indice):
         return contar
 
 
-
-"""Conversion_de_unidades"""
-
 def kh_a_ms (kilometros_hora):
+
+    """Recibe: Cantidad de kilómetros por hora.
+    Función: Conversión de Kilómetros por hora a metros por segundo.
+    Retorna: La cantidad inicial en metros por segundo."""
+    
     metros_seg = (kilometros_hora*1000/3600)
     return ("{:.2f}".format(metros_seg))
 
 def min_a_hrs (minutos):
+
+    
+    """Recibe: Cantidad de minutos.
+    Función: Conversión de minutos a horas.
+    Retorna: La cantidad inicial en horas."""
+    
     horas_c = minutos/60
     return horas_c
 
 
-""" Tema 1_Operaciones_Notación científica"""
 
 def notacion_cientifica(numero_nd):
-    """Recibe: Un número en notación decimal
+    
+    """Recibe: Un número en notación decimal.
     función: Se encarga de convertir el número en notación
-    decimal a notación científica
-    Retorna: Número recibido en notación científica"""
+    decimal a notación científica.
+    Retorna: Número recibido en notación científica."""
     
     """Referencia: https://www.delftstack.com/es/howto/python/scientific-
     notation-python/"""
@@ -92,10 +114,10 @@ def notacion_cientifica(numero_nd):
 
 def notacion_decimal(numero_nc):
 
-    """Recibe: Un número en notación científica
+    """Recibe: Un número en notación científica.
     función: Se encarga de convertir el número en notación
-    científica a notación decimal
-    Retorna: Número recibido en notación decimal"""
+    científica a notación decimal.
+    Retorna: Número recibido en notación decimal."""
     
     """Referencia: https://www.it-swarm-es.com/es/python/convertir-notacion-
     cientifica-decimales/1051995017/"""
@@ -103,9 +125,22 @@ def notacion_decimal(numero_nc):
     return float(numero_nc)
 
 
-"""Tema 1_Preguntas_Notación científica"""
+
 
 def tema1_dificultad1(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
 
     print ("\nTema 1: " + tema_e + "\n\nNivel " + dificultad_e)
 
@@ -173,6 +208,20 @@ def tema1_dificultad1(tema_e, dificultad_e):
     
 
 def tema1_dificultad2(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
+        
     print ("\nTema 1: " + tema_e + "\n\nNivel " + dificultad_e)
 
     respuesta_t1n2_1 = input("""
@@ -261,49 +310,81 @@ def tema1_dificultad2(tema_e, dificultad_e):
                              
 
 
-"""" Tema 2_Operaciones"""
-
 
 def velocidad_mru(distancia_mru, tiempo_mru):
+
+    """Recibe: Valores de distancia y tiempo
+    Función: Calcula la velocidad promedio a partir de la distancia y tiempo
+    Retorna: El valor de la velocidad promedio con 2 decimales"""
+    
     velocidad_mru_f1 = distancia_mru/tiempo_mru 
     return ("{:.2f}".format(velocidad_mru_f1))
 
 def tiempo_mru(distancia_mru, velocidad_mru):
+
+    """Recibe: Valores de distancia y velocidad
+    Función: Calcula el tiempo a partir de la distancia y velocidad promedio
+    Retorna: El valor del tiempo con 2 decimales"""
+    
     velocidad_mru_f3 = distancia_mru/velocidad_mru
     return  ("{:.2f}".format(velocidad_mru_f3))
 
-
-
-"""Distancia"""
-
 def distancia_mrua_vfvit (velocidad_f_mrua, velocidad_i_mrua, tiempo_mrua):
+
+    """Recibe: Valores de velocidad final, velocidad inicial y tiempo
+    Función: Calcula la distancia a partir de los valores que recibe la función
+    Retorna: El valor de la distancia con 2 decimales"""
+    
     distancia_mrua_f2 = ((velocidad_f_mrua+velocidad_i_mrua)/2) * tiempo_mrua
     return ("{:.2f}".format(distancia_mrua_f2))
 
 def distancia_mrua_vfvia (velocidad_f_mrua, velocidad_i_mrua,aceleracion_mrua):
+
+    """Recibe: Valores de velocidad final, velocidad inicial y aceleración
+    Función: Calcula la distancia a partir de los valores que recibe la función
+    Retorna: El valor de la distancia con 2 decimales"""
+    
     distancia_mrua_f3_p1 = (velocidad_f_mrua**2-velocidad_i_mrua**2)
     distancia_mrua_f3_p2 = distancia_mrua_f3_p1 / (2*aceleracion_mrua)
     return ("{:.2f}".format(distancia_mrua_f3_p2))
 
-
-"""Velocidad Final"""
-
 def velocidad_f_mrua_viat (velocidad_i_mrua, aceleracion_mrua, tiempo_mrua):
+
+    """Recibe: Valores de velocidad inicial, aceleración y tiempo
+    Función: Calcula la velocidad final a partir de los valores que recibe la
+    función
+    Retorna: El valor de la velocidad final con 2 decimales"""
+    
     velocidad_f_mrua_f1 = aceleracion_mrua*tiempo_mrua + velocidad_i_mrua
     return ("{:.2f}".format(velocidad_f_mrua_f1))
 
-
-"""Aceleración"""
-
 def aceleracion_mrua_vfvit (velocidad_f_mrua, velocidad_i_mrua, tiempo_mrua):
+
+    """Recibe: Valores de velocidad final, velocidad inicial y tiempo
+    Función: Calcula la aceleración a partir de los valores que recibe la
+    función
+    Retorna: El valor de la aceleración con 2 decimales"""
+    
     aceleracion_mrua_f1 = (velocidad_f_mrua-velocidad_i_mrua)/tiempo_mrua
     return ("{:.2f}".format(aceleracion_mrua_f1))
 
 
-""" Tema 2_Preguntas_MRU y MRUA"""
 
 
 def tema2_dificultad1(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
 
     print ("\nTema 2: " + tema_e + "\n\nNivel " + dificultad_e)
 
@@ -376,6 +457,20 @@ def tema2_dificultad1(tema_e, dificultad_e):
     
 
 def tema2_dificultad2(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
+    
     print ("\nTema 2: " + tema_e + "\n\nNivel " + dificultad_e)
 
     respuesta_t2n2_1 = input("""
@@ -468,59 +563,113 @@ def tema2_dificultad2(tema_e, dificultad_e):
     
 
 
-"""Tema 3_Operaciones_Caída Libre"""
 
-""" Altura """
+
+
 
 def altura_cl_t (tiempo_cl):
+
+    """Recibe: Valore de tiempo
+    Función: Calcula la altura a partir del valor que recibe la función
+    Retorna: El valor del tiempo con 2 decimales"""
+    
     altura_cl_f1 =(1/2)*GRAVEDAD*tiempo_cl**2
     return ("{:.2f}".format(altura_cl_f1))
 
 def altura_cl_vivft (velocidad_i_cl, velocidad_f_cl, tiempo_cl):
+
+    """Recibe: Valores de velocidad inicial, velocidad final y tiempo
+    Función: Calcula la altura a partir de los valores que recibe la función
+    Retorna: El valor de la altura con 2 decimales"""
+    
     altura_cl_f3 = ((velocidad_i_cl + velocidad_f_cl)/2)*tiempo_cl
     return ("{:.2f}".format(altura_cl_f3))
 
 def altura_cl_vivf (velocidad_i_cl, velocidad_f_cl):
+
+    """Recibe: Valores de velocidad inicial y velocidad final
+    Función: Calcula la altura a partir de los valores que recibe la función
+    Retorna: El valor de la altura con 2 decimales"""
+    
     altura_cl_f4 = (velocidad_f_cl**2+velocidad_i_cl**2)/(2*GRAVEDAD)
     return ("{:.2f}".format(altura_cl_f4))
 
-
-""" Tiempo """
-
 def tiempo_cl_vivfa (velocidad_i_cl, velocidad_f_cl, altura_cl):
+
+    """Recibe: Valores de velocidad inicial, velocidad final y altura
+    Función: Calcula el tiempo a partir de los valores que recibe la función
+    Retorna: El valor del tiempo con 2 decimales"""
+    
     tiempo_cl_f3 = altura_cl/((velocidad_i_cl+velocidad_f_cl)/2)
     return ("{:.2f}".format(tiempo_cl_f3))
 
-
-""" Velocidad Inicial """
-
 def velocidad_i_cl_vft (velocidad_f_cl, tiempo_cl):
+
+    """Recibe: Valores de velocidad final y tiempo
+    Función: Calcula la velocidad inicial a partir de los valores que recibe la
+    función
+    Retorna: El valor de la velocidad inicial con 2 decimales"""
+    
     velocidad_i_cl_f1 = velocidad_f_cl-GRAVEDAD*tiempo_cl
     return ("{:.2f}".format(velocidad_i_cl_f1))
 
 def velocidad_i_cl_at (altura_cl, tiempo_cl):
+
+    """Recibe: Valores de altura y tiempo
+    Función: Calcula la velocidad inicial a partir de los valores que recibe la
+    función
+    Retorna: El valor de la velocidad inicial con 2 decimales"""
+    
     velocidad_i_cl_f3 = (altura_cl-(1/2)*GRAVEDAD*tiempo_cl**2)/tiempo_cl
     return ("{:.2f}".format(velocidad_i_cl_f3))
 
-
-""" Velocidad Final """
-
 def velocidad_f_cl_vit (velocidad_i_cl, tiempo_cl):
+
+    """Recibe: Valores de velocidad inicial y tiempo
+    Función: Calcula la velocidad final a partir de los valores que recibe la
+    función
+    Retorna: El valor de la velocidad final con 2 decimales"""
+    
     velocidad_f_cl_f1 = velocidad_i_cl+GRAVEDAD*tiempo_cl
     return ("{:.2f}".format(velocidad_f_cl_f1))
 
 def velocidad_f_cl_via (velocidad_i_cl, altura_cl):
+
+    """Recibe: Valores de velocidad inicial y altura
+    Función: Calcula la velocidad final a partir de los valores que recibe la
+    función
+    Retorna: El valor de la velocidad final con 2 decimales"""
+    
     velocidad_f_cl_f2 = (velocidad_i_cl**2+2*GRAVEDAD*altura_cl)**(1/2)
     return ("{:.2f}".format(velocidad_f_cl_f2))
 
 def velocidad_f_cl_viat (velocidad_i_cl, altura_cl, tiempo_cl):
+
+    """Recibe: Valores de velocidad inicial, altura y tiempo
+    Función: Calcula la velocidad final a partir de los valores que recibe la
+    función
+    Retorna: El valor de la velocidad final con 2 decimales"""
+    
     velocidad_f_cl_f3 = ((2*altura_cl)/tiempo_cl)-velocidad_i_cl
     return ("{:.2f}".format(velocidad_f_cl_f3))
 
 
-"""Tema 3_Preguntas_Caída Libre"""
+
 
 def tema3_dificultad1(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
 
     print ("\nTema 3: " + tema_e + "\n\nNivel " + dificultad_e)
     print ("\nGravedad", GRAVEDAD)
@@ -590,6 +739,20 @@ def tema3_dificultad1(tema_e, dificultad_e):
 
 
 def tema3_dificultad2(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
+    
     print ("\nTema 3: " + tema_e + "\n\nNivel " + dificultad_e)
     print ("\nGravedad", GRAVEDAD)
 
@@ -682,32 +845,77 @@ def tema3_dificultad2(tema_e, dificultad_e):
     
     
 
-"""Tema 4_Operaciones_Leyes de Newton"""
+
 
 def fuerza_friccion (normal, uk):
+
+    """Recibe: Valores de la fuerza normal y el coeficiente de fricción cinético
+    Función: Calcula la fuerza de fricción a partir de los valores que recibe la
+    función
+    Retorna: El valor de la fuerza de fricción con 2 decimales"""
+    
     f_friccion = normal*uk
     return ("{:.2f}".format(f_friccion))
 
 def peso_newton (masa_n):
+    
+    """Recibe: Valor de la masa
+    Función: Calcula peso de un objeto o persona a partir de los valores que
+    recibe la función
+    Retorna: El valor del peso con 2 decimales"""
+    
     peso_newton_f = masa_n*GRAVEDAD
     return ("{:.2f}".format(peso_newton_f))
 
 def fuerza_neta (masa_n, aceleracion_n):
+
+    """Recibe: Valores de la masa y aceleración
+    Función: Calcula la fuerza neta de un objeto o persona a partir de los
+    valores que recibe la función
+    Retorna: El valor de la Fuerza Neta con 2 decimales"""
+        
     fuerza_neta_f = masa_n *aceleracion_n
     return ("{:.2f}".format(fuerza_neta_f))
 
 def masa_2n (fuerza_n, aceleracion_n):
+
+    """Recibe: Valores de la fuerza neta y aceleración
+    Función: Calcula la masa de un objeto o persona a partir de los
+    valores que recibe la función
+    Retorna: El valor de la masa con 2 decimales"""
+    
     masa_2n_f = fuerza_n/aceleracion_n
     return ("{:.2f}".format(masa_2n_f))
 
 def aceleracion_2n (fuerza_n, masa_n):
+
+    """Recibe: Valores de la fuerza neta y masa
+    Función: Calcula la aceleración de un objeto o persona a partir de los
+    valores que recibe la función
+    Retorna: El valor de la aceleración con 2 decimales"""
+    
     aceleracion_2n_f = fuerza_n/masa_n
     return ("{:.2f}".format(aceleracion_2n_f))
 
-    
-"""Tema 4_Preguntas_Leyes de Newton"""
 
+
+
+
+    
 def tema4_dificultad1(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
     
     print ("\nTema 4: " + tema_e + "\n\nNivel " + dificultad_e)
 
@@ -781,6 +989,20 @@ def tema4_dificultad1(tema_e, dificultad_e):
 
                                     
 def tema4_dificultad2(tema_e, dificultad_e):
+
+    """Recibe: El nombre del tema seleccionado y la dificultad seleccionada.
+    Función: Señala el tema y nivel que el usuario ha elegido. Presenta las
+    preguntas del cuestionario y guardar las respuestas del usuario en una
+    variable; calcula las respuestas del programa mandando a llamar a las
+    funciones correspondientes y guardando los valores retornados en variables,
+    haciendo operaciones adicionales en caso de ser necesarias. Agrega las
+    respuestas del usuario y del programa a las listas correspondientes y
+    manda a llamar a la función correcto_o_incorrecto, guardando el valor que
+    retorna dicha función en la variable cont_(número correspondiente), sumando
+    hasta el final estas variables y guardando el resultado en cont_f y mandando
+    a llamar la función clasificacion.
+    Retorna: Lo que retornen las funciones llamadas y mandadas a imprimir."""
+    
     print ("\nTema 4: " + tema_e + "\n\nNivel " + dificultad_e)
     
 
@@ -880,9 +1102,14 @@ def tema4_dificultad2(tema_e, dificultad_e):
      
     
 
-"""Elegir tema y nivel"""
+
 
 def tema_y_nivel ():
+
+    """Recibe: Nada.
+    Función: Gueardar el número de tema y nivel que el usuario desee repasar,
+    asegurandose que estos se encuentres dentro del rango.
+    Retorna: Redirecciona a el tema y nivel correspondientes en el cuestionario."""
 
     tema = int(input("""
 
