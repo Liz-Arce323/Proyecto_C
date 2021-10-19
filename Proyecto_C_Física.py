@@ -1,4 +1,19 @@
-""" Nota para la Sub-competencia: Tecnologías SEG0702A
+""" Anahí Lizbeth Arceta Popoca     A01704959
+
+Cuestionarío de Física 
+
+
+Ayuda a los estudiantes a repasar temas de la materia de Física.
+Realiza una serie de preguntas divididas por tema y nivel, comparando
+las respuestas dadas por el usuario y las dadas por el programa marcando 
+si las respuestas son correctas o incorrectas. Califica estás respuestas y 
+presenta la calificación al usuario y le pregunta si quiere seguir repasando, 
+un 'Sí' volverá repetir el programa un 'No' lo termina.
+Al final se da una pequeña despedida.
+
+
+
+Nota para la Sub-competencia: Tecnologías SEG0702A
 
 'Incorpora y explica nuevas fucniones en su programa e inclya sus referencias
 al API de python'
