@@ -3,9 +3,9 @@
 'Incorpora y explica nuevas fucniones en su programa e inclya sus referencias
 al API de python'
 
-Se encuentran en las líneas: 3 referencias 
+Se encuentran en las líneas: 113, 125 y 811
 
-con el link de referencia en las lineas:  """
+con el link de referencia en las lineas: 110-111, 122-123 y 813-814"""
 
 
 
