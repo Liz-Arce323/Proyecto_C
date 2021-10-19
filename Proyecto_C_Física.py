@@ -18,9 +18,9 @@ Nota para la Sub-competencia: Tecnologías SEG0702A
 'Incorpora y explica nuevas fucniones en su programa e inclya sus referencias
 al API de python'
 
-Se encuentran en las líneas: 113, 125 y 811
+Se encuentran en las líneas: 128, 140 y 826
 
-con el link de referencia en las lineas: 110-111, 122-123 y 813-814"""
+con el link de referencia en las lineas: 125-126, 137-138 y 828-829"""
 
 
 
