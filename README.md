@@ -21,3 +21,10 @@ Referencias:
 Zita, A. (s.f). Importancia de la física.  *Toda Materia*. Recuperado de: https://www.todamateria.com/importancia-de-la-fisica/
 
 Morales, M. Claudia, A. y Olivera, A. (2015). La enseñanza y el aprendizaje de la Física y de la Química en el nivel secundario desde la opinión de estudiantes.  *Revista Electrónica de Investigación en Educación en Ciencias, 10 (2)*. 11-19. Recuperado de: https://www.redalyc.org/articulo.oa?id=273343069002
+
+
+Referencias del cuestionario:
+
+Serway, R. y Jewerr, J. (2015). *Física para ciencias e ingenierías* (pp. 21 – 58) y (pp. 111- 149). (9a ed., Vol.1). Ciudad de México, México: CENGAGE Learning
+
+Vértiz, E. (2019). Caída Libre. *UAQ*. Recuperado de: https://www.uaeh.edu.mx/docencia/P_Presentaciones/prepa2/2019/VertizAguirre-Ernestina-Caida%20libre.pdf
